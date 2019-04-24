@@ -1,0 +1,19 @@
+AppBundle\Entity\Category:
+    category_job:
+        name: Job
+        iconKey: fa-dollar
+    category_lunch:
+        name: Lunch
+        iconKey: fa-spoon
+    category_proverb:
+        name: Proverbs
+        iconKey: fa-quote-left
+    category_pets:
+        name: Pets
+        iconKey: fa-paw
+    category_love:
+        name: Love
+        iconKey: fa-heart
+    category_lucky_number:
+        name: Lucky Number
+        iconKey: fa-bug
