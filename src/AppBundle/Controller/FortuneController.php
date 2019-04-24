@@ -17,10 +17,27 @@ class FortuneController extends Controller
             ->getManager()
             ->getRepository('AppBundle:Category');
 
-        $categories = $repo->findAll();
+        $categories = $repo->findAllOrdered();
 
         return $this->render('fortune/homepage.html.twig', array(
             'categories' => $categories
         ));
+    }
+
+    /**
+     * @Route("/category/{id}", name="category_show")
+     */
+    public function showCategoryAction($id)
+    {
+        $categoryRepository = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Category');
+        $category = $categoryRepository->find($id);
+        if (!$category) {
+            throw $this->createNotFoundException();
+        }
+        return $this->render('fortune/showCategory.html.twig',[
+            'category' => $category
+        ]);
     }
 }

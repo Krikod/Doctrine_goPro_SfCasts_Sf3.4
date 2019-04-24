@@ -10,4 +10,10 @@ namespace AppBundle\Repository;
  */
 class CategoryRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllOrdered()
+    {
+        $dql = 'SELECT cat FROM AppBundle\Entity\Category cat';
+        $query = $this->getEntityManager()->createQuery($dql);
+        return $query->execute();
+    }
 }

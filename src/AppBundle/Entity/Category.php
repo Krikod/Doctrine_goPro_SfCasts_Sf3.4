@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Category
@@ -40,6 +41,11 @@ class Category
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\FortuneCookie", mappedBy="category")
      */
     private $fortuneCookies;
+
+    public function __construct()
+    {
+        $this->fortuneCookies = new ArrayCollection();
+    }
 
 
     /**
@@ -98,5 +104,13 @@ class Category
     public function getIconKey()
     {
         return $this->iconKey;
+    }
+
+    /**
+     * @return ArrayCollection|FortuneCookie[]
+     */
+    public function getFortuneCookies()
+    {
+        return $this->fortuneCookies;
     }
 }
