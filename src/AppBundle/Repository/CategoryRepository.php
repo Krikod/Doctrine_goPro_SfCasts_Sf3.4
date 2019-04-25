@@ -23,4 +23,26 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
 //        var_dump($query->getDQL());die;
         return $query->execute();
     }
+
+    public function search($term)
+    {
+        return $this->createQueryBuilder('cat')
+//            => QUERY TERMES EXACTS:
+//            ->andWhere('cat.name = :searchTerm')
+//                  (avoids SQL injection attacks:)
+//            ->setParameter('searchTerm', $term)
+
+//            => QUERY TERMES NON EXACTS
+//            'LIKE / =' : result matche partie/tout de la query:
+//            ->andWhere('cat.name LIKE :searchTerm')
+//            ->setParameter('searchTerm', '%'.$term.'%')
+
+//            => QUERY sur name OR iconKey property
+            ->andWhere('cat.name LIKE :searchTerm 
+                        OR 
+                        cat.iconKey LIKE :searchTerm')
+            ->setParameter('searchTerm', '%'.$term.'%')
+//            (on peut chercher "fa-bug")
+            ->getQuery()->execute();
+    }
 }
