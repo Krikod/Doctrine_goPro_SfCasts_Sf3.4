@@ -39,10 +39,12 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
 
 //            => QUERY sur name OR iconKey property
             ->andWhere('cat.name LIKE :searchTerm 
-                        OR 
-                        cat.iconKey LIKE :searchTerm')
+                        OR cat.iconKey LIKE :searchTerm
+                        OR fc.fortune LIKE :searchTerm')
+            ->leftJoin('cat.fortuneCookies', 'fc')
             ->setParameter('searchTerm', '%'.$term.'%')
 //            (on peut chercher "fa-bug")
+
             ->getQuery()->execute();
     }
 }
