@@ -18,6 +18,8 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
 //        return $query->execute();
         $qb = $this->createQueryBuilder('cat')
         ->addOrderBy('cat.name', 'DESC')
+            ->leftJoin('cat.fortuneCookies', 'fc')
+            ->addSelect('fc')
         ;
         $query = $qb->getQuery();
 //        var_dump($query->getDQL());die;
@@ -42,9 +44,20 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
                         OR cat.iconKey LIKE :searchTerm
                         OR fc.fortune LIKE :searchTerm')
             ->leftJoin('cat.fortuneCookies', 'fc')
+            ->addSelect('fc')
             ->setParameter('searchTerm', '%'.$term.'%')
 //            (on peut chercher "fa-bug")
 
             ->getQuery()->execute();
+    }
+
+    public function findWithFortunesJoin($id)
+    {
+        return $this->createQueryBuilder('cat')
+            ->andWhere('cat.id = :id')
+            ->leftJoin('cat.fortuneCookies', 'fc')
+            ->addSelect('fc')
+            ->setParameter('id', $id)
+            ->getQuery()->getOneOrNullResult();
     }
 }
