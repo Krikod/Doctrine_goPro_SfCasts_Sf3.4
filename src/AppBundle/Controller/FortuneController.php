@@ -32,10 +32,13 @@ class FortuneController extends Controller
         $categoryRepository = $this->getDoctrine()
             ->getManager()
             ->getRepository('AppBundle:Category');
+
         $category = $categoryRepository->find($id);
+
         if (!$category) {
             throw $this->createNotFoundException();
         }
+
         return $this->render('fortune/showCategory.html.twig',[
             'category' => $category
         ]);

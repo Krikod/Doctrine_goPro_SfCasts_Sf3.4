@@ -12,8 +12,10 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
 {
     public function findAllOrdered()
     {
-        $dql = 'SELECT cat FROM AppBundle\Entity\Category cat';
+        $dql = 'SELECT cat FROM AppBundle\Entity\Category cat ORDER BY cat.name DESC';
         $query = $this->getEntityManager()->createQuery($dql);
+//        var_dump($query->getSQL());die;
+
         return $query->execute();
     }
 }
