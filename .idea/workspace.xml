@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26cb990b-635c-4004-abc3-bc5dcd5a8f56" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/fortune/showCategory.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/fortune/showCategory.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FortuneController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FortuneController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showCategory.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="showCategory.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/fortune/showCategory.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
@@ -67,12 +65,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FortuneCookieRepository.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FortuneCookieRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="368">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#70#0#PHP" expanded="true" />
+                <marker date="1556278181216" expanded="true" signature="515:562" ph="SELECT * FRO... fortune_cookie" />
+                <marker date="1556278181216" expanded="true" signature="515:798" ph="SELECT SUM(f... fortune_cookie" />
+                <marker date="1556278181216" expanded="true" signature="754:789" ph="SELECT SUM(f... fortune_cookie" />
+                <marker date="1556278181216" expanded="true" signature="1147:1259" ph="Select() pou... " />
+                <marker date="1556278181216" expanded="true" signature="1259:1457" ph="select('SUM(... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,9 +110,9 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/fixtures.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/FortuneController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/fortune/showCategory.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php" />
       </list>
     </option>
   </component>
@@ -344,12 +349,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556093849258</updated>
-      <workItem from="1556093850392" duration="34412000" />
+      <workItem from="1556093850392" duration="37014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34412000" />
+    <option name="totallyTimeSpent" value="37014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="755" y="24" width="1168" height="822" extended-state="0" />
@@ -557,14 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FortuneController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -586,6 +583,21 @@
           <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#70#0#PHP" expanded="true" />
+            <marker date="1556278181216" expanded="true" signature="515:562" ph="SELECT * FRO... fortune_cookie" />
+            <marker date="1556278181216" expanded="true" signature="515:798" ph="SELECT SUM(f... fortune_cookie" />
+            <marker date="1556278181216" expanded="true" signature="754:789" ph="SELECT SUM(f... fortune_cookie" />
+            <marker date="1556278181216" expanded="true" signature="1147:1259" ph="Select() pou... " />
+            <marker date="1556278181216" expanded="true" signature="1259:1457" ph="select('SUM(... " />
           </folding>
         </state>
       </provider>

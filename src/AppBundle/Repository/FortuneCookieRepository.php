@@ -1,7 +1,9 @@
 <?php
 
 namespace AppBundle\Repository;
+
 use AppBundle\Entity\Category;
+use Doctrine\DBAL\DriverManager;
 
 /**
  * FortuneCookieRepository
@@ -13,15 +15,34 @@ class FortuneCookieRepository extends \Doctrine\ORM\EntityRepository
 {
     public function countNumberPrintedForCategory(Category $category)
     {
-        return $this->createQueryBuilder('fc')
-            ->andWhere('fc.category = :category')
-            ->setParameter('category', $category)
-//            Select() pour annuler le 1er select 'fc' !!
-                ->innerJoin('fc.category', 'cat')
-            ->select('SUM(fc.numberPrinted) as fortunesPrinted, 
-              AVG(fc.numberPrinted) as fortunesAverage, 
-              cat.name')
-            ->getQuery()
-            ->getOneOrNullResult();
+//        raw SQL query
+        $conn = $this->getEntityManager()
+            ->getConnection();
+
+        $sql = '
+            SELECT SUM(fc.numberPrinted) as fortunesPrinted,
+                    AVG(fc.numberPrinted) as fortunesAverage, 
+                    cat.name
+            FROM fortune_cookie fc
+            INNER JOIN category cat ON cat.id = fc.category_id
+            WHERE fc.category_id = :category
+        ';
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('category' => $category->getId()));
+        return $stmt->fetch();
+
+
+//        var_dump($conn);die;
+
+//        return $this->createQueryBuilder('fc')
+//            ->andWhere('fc.category = :category')
+//            ->setParameter('category', $category)
+////            Select() pour annuler le 1er select 'fc' !!
+//                ->innerJoin('fc.category', 'cat')
+//            ->select('SUM(fc.numberPrinted) as fortunesPrinted,
+//              AVG(fc.numberPrinted) as fortunesAverage,
+//              cat.name')
+//            ->getQuery()
+//            ->getOneOrNullResult();
     }
 }
