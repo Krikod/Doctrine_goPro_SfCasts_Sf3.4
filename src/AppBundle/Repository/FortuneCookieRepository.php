@@ -17,8 +17,11 @@ class FortuneCookieRepository extends \Doctrine\ORM\EntityRepository
             ->andWhere('fc.category = :category')
             ->setParameter('category', $category)
 //            Select() pour annuler le 1er select 'fc' !!
-        ->select('SUM(fc.numberPrinted) as fortunesPrinted')
+                ->innerJoin('fc.category', 'cat')
+            ->select('SUM(fc.numberPrinted) as fortunesPrinted, 
+              AVG(fc.numberPrinted) as fortunesAverage, 
+              cat.name')
             ->getQuery()
-            ->getSingleScalarResult();
+            ->getOneOrNullResult();
     }
 }

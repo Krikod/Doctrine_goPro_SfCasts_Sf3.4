@@ -11,7 +11,9 @@
                             <span class="fa {{ category.iconKey }}"></span> {{ category.name }}
                         </th>
                         <th>
-                            Printed History<br> ({{ fortunesPrinted|number_format }} total)
+                            Printed History<br> ({{ fortunesPrinted|number_format }} total)<br>
+                            AVG printed: {{ averagePrinted }}<br>
+                            Category: {{ categoryName }}
                         </th>
                     </tr>
                     </thead>
