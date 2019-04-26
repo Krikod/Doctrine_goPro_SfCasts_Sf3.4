@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use AppBundle\Entity\Category;
 
 /**
  * FortuneCookieRepository
@@ -10,4 +11,14 @@ namespace AppBundle\Repository;
  */
 class FortuneCookieRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function countNumberPrintedForCategory(Category $category)
+    {
+        return $this->createQueryBuilder('fc')
+            ->andWhere('fc.category = :category')
+            ->setParameter('category', $category)
+//            Select() pour annuler le 1er select 'fc' !!
+        ->select('SUM(fc.numberPrinted) as fortunesPrinted')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

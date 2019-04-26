@@ -39,7 +39,6 @@ class FortuneController extends Controller
     public function showCategoryAction($id)
     {
         $categoryRepository = $this->getDoctrine()
-            ->getManager()
             ->getRepository('AppBundle:Category');
 
         $category = $categoryRepository->findWithFortunesJoin($id);
@@ -48,8 +47,13 @@ class FortuneController extends Controller
             throw $this->createNotFoundException();
         }
 
+        $fortunesPrinted = $this->getDoctrine()
+            ->getRepository('AppBundle:FortuneCookie')
+            ->countNumberPrintedForCategory($category);
+//var_dump($fortunesPrinted);die();
         return $this->render('fortune/showCategory.html.twig',[
-            'category' => $category
+            'category' => $category,
+            'fortunesPrinted' => $fortunesPrinted
         ]);
     }
 }
