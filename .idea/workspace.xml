@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26cb990b-635c-4004-abc3-bc5dcd5a8f56" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FortuneCookieRepository.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FortuneCookieRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="44">
+              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
               <folding>
                 <element signature="e#40#70#0#PHP" expanded="true" />
                 <marker date="1556278181216" expanded="true" signature="515:562" ph="SELECT * FRO... fortune_cookie" />
@@ -77,6 +77,18 @@
                 <marker date="1556278181216" expanded="true" signature="754:789" ph="SELECT SUM(f... fortune_cookie" />
                 <marker date="1556278181216" expanded="true" signature="1147:1259" ph="Select() pou... " />
                 <marker date="1556278181216" expanded="true" signature="1259:1457" ph="select('SUM(... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+              <folding>
+                <marker date="1556398390536" expanded="true" signature="329:397" ph="SELECT cat F... AppBundle" />
               </folding>
             </state>
           </provider>
@@ -109,10 +121,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/AppFixtures.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/fixtures.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/FortuneController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/fortune/showCategory.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" />
       </list>
     </option>
   </component>
@@ -349,12 +361,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556093849258</updated>
-      <workItem from="1556093850392" duration="37014000" />
+      <workItem from="1556093850392" duration="40445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37014000" />
+    <option name="totallyTimeSpent" value="40445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="755" y="24" width="1168" height="822" extended-state="0" />
@@ -534,16 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <marker date="1556209308472" expanded="true" signature="298:366" ph="SELECT cat F... AppBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Category.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -589,8 +591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/FortuneCookieRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="44">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
           <folding>
             <element signature="e#40#70#0#PHP" expanded="true" />
             <marker date="1556278181216" expanded="true" signature="515:562" ph="SELECT * FRO... fortune_cookie" />
@@ -598,6 +600,16 @@
             <marker date="1556278181216" expanded="true" signature="754:789" ph="SELECT SUM(f... fortune_cookie" />
             <marker date="1556278181216" expanded="true" signature="1147:1259" ph="Select() pou... " />
             <marker date="1556278181216" expanded="true" signature="1259:1457" ph="select('SUM(... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+          <folding>
+            <marker date="1556398390536" expanded="true" signature="329:397" ph="SELECT cat F... AppBundle" />
           </folding>
         </state>
       </provider>
