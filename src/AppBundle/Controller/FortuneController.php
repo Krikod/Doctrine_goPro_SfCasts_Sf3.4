@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,6 +15,12 @@ class FortuneController extends Controller
      */
     public function homepageAction(Request $request)
     {
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+//        $filters = $em->getFilters()
+//            ->enable('fortune_cookie_discontinued');
+//        $filters->setParameter('discontinued', true);
+
         $repo = $this->getDoctrine()
             ->getManager()
             ->getRepository('AppBundle:Category');
